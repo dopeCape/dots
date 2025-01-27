@@ -1,0 +1,2 @@
+#!/usr/bin/bash
+waybar -c /home/tejes/.config/hypr/component/waybar/config -s /home/tejes/.config/hypr/component/waybar/style.css &

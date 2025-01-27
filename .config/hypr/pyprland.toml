@@ -1,0 +1,21 @@
+[pyprland]
+plugins = [
+    "expose","scratchpads"
+]
+
+[scratchpads.clock]
+animation = ""
+command = "kitty --class clock"
+class = "clock"
+size = "100% 100%"
+max_size = "1920px 100%"
+
+
+[scratchpads.btm]
+animation = "fromTop"
+command = "kitty --class btm"
+class = "btm"
+size = "100% 100%"
+max_size = "1920px 100%"
+
+

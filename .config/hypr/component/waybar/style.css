@@ -1,0 +1,225 @@
+/* =============================================================================
+ *
+ * Waybar configuration
+ *
+ * Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
+ *
+ * =========================================================================== */
+
+/* -----------------------------------------------------------------------------
+ * Keyframes
+ * -------------------------------------------------------------------------- */
+
+@keyframes blink-warning {
+  70% {
+    color: #979eab;
+  }
+
+  to {
+    color: #979eab;
+    background-color: #e5c07b;
+  }
+}
+
+@keyframes blink-critical {
+  70% {
+    color: #979eab;
+  }
+
+  to {
+    color: #979eab;
+    background-color: #e06c75;
+  }
+}
+
+/* -----------------------------------------------------------------------------
+ * Base styles
+ * -------------------------------------------------------------------------- */
+
+/* Reset all styles */
+* {
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  margin: 1px;
+  padding: 0;
+  color: #61afef;
+}
+
+/* The whole bar */
+window#waybar {
+  background-color: rgba(0, 0, 0, 0);
+  font-family: Intel One Mono Nerd Font;
+  font-size: 14px;
+}
+
+/* Every modules */
+#battery,
+#clock,
+#backlight,
+#cpu,
+#custom-keyboard-layout,
+#memory,
+#mode,
+#custom-weather,
+#network,
+#pulseaudio,
+#temperature,
+#tray,
+#idle_inhibitor,
+#window,
+#custom-power,
+#workspaces,
+#custom-media,
+#custom-PBPbattery {
+  padding: 0.25rem 0.75rem;
+  margin: 1px 6px;
+  background-color: rgba(40, 44, 52, 0.8);
+  border-radius: 20px;
+}
+
+/* -----------------------------------------------------------------------------
+ * Modules styles
+ * -------------------------------------------------------------------------- */
+
+#clock {
+  color: #56b6c2;
+}
+
+#custom-weather {
+  color: #be5046;
+}
+
+#battery {
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#battery.warning {
+  color: #e5c07b;
+}
+
+#battery.critical {
+  color: #e06c75;
+}
+
+#battery.warning.discharging {
+  animation-name: blink-warning;
+  animation-duration: 3s;
+}
+
+#battery.critical.discharging {
+  animation-name: blink-critical;
+  animation-duration: 2s;
+}
+
+#cpu {
+  color: #e06c75;
+}
+
+#cpu.warning {
+  color: #e5c07b;
+}
+
+#cpu.critical {
+  color: #e06c75;
+}
+
+#memory {
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  color: #e06c75;
+}
+
+#memory.warning {
+  color: #e5c07b;
+}
+
+#memory.critical {
+  color: #e06c75;
+  animation-name: blink-critical;
+  animation-duration: 2s;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#mode {
+  border-bottom: 3px transparent;
+  color: #be5046;
+  margin-left: 5px;
+  padding: 7px;
+}
+
+#network.disconnected {
+  color: #e5c07b;
+}
+
+#pulseaudio {
+  color: #98c379;
+  border-left: 0px;
+  border-right: 0px;
+  margin-right: 0;
+  border-radius: 20px 0 0 20px;
+}
+
+#pulseaudio.microphone {
+  border-left: 0px;
+  border-right: 0px;
+  margin-left: 0;
+  padding-left: 0;
+  border-radius: 0 20px 20px 0;
+}
+
+#temperature.critical {
+  color: #e06c75;
+}
+
+#window {
+  font-weight: bold;
+  color: #e06c75;
+}
+
+#custom-media {
+  color: #98c379;
+}
+
+#workspaces {
+  font-size: 16px;
+  background-color: rgba(40, 44, 52, 0.8);
+  border-radius: 20px;
+}
+
+#workspaces button {
+  border-bottom: 3px solid transparent;
+  margin-bottom: 0px;
+  color: #979eab;
+}
+
+#workspaces button.active {
+  border-bottom: 1px solid #be5046;
+  margin-bottom: 1px;
+  padding-left: 0;
+}
+
+#workspaces button.urgent {
+  border-color: #e06c75;
+  color: #e06c75;
+}
+
+#custom-power {
+  font-size: 18px;
+  padding-right: 1rem;
+}
+
+#custom-launcher {
+  font-size: 15px;
+  margin-left: 15px;
+  margin-right: 10px;
+}
+
+#backlight.icon {
+  padding-right: 1px;
+  font-size: 13px;
+}
