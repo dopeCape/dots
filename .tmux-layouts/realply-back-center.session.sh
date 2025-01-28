@@ -11,6 +11,8 @@ if initialize_session "realply-backend"; then
   run_cmd  "nvim"
   
   new_window "runner"
+  run_cmd "export NIX_PATH=nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos:$NIX_PATH"
+
   run_cmd "nix-shell ."
   run_cmd "bun run dev"
   # split_v 10 
