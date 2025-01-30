@@ -174,7 +174,13 @@ precmd() {
     echo -ne '\e[1 q'  # Change back to block when command completes
 }
 
-
+battery_monitor() {
+    while true; do
+        clear
+        upower -i $(upower -e | grep BAT) | grep --color=never -E "state|to full|to empty|percentage"
+        sleep 10
+    done
+}
 
 s() {
     echo $PWD
