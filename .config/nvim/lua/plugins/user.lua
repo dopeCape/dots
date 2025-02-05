@@ -243,7 +243,7 @@ return {
           path = "~/obsi-vault",
         },
       },
-      notes_subdir = "notes",
+      notes_subdir = "temp",
       daily_notes = {
         -- Optional, if you keep daily notes in a separate directory.
         folder = "dailies",
@@ -269,6 +269,7 @@ return {
         -- Trigger completion at 2 chars.
         min_chars = 2,
       },
+      open_notes_in = "vsplit",
 
       new_notes_location = "_temp",
       -- see below for full list of options 👇
@@ -868,4 +869,30 @@ return {
       transparency = true,
     },
   } },
+  {
+    "echasnovski/mini.animate",
+    opts = {
+      cursor = {
+        enable = false,
+      },
+
+      scroll = {
+        enable = true,
+      },
+
+      -- Window resize
+      resize = {
+        enable = false,
+      },
+
+      -- Window open
+      open = {
+        enable = false,
+      },
+
+      close = {
+        enable = false,
+      },
+    },
+  },
 }

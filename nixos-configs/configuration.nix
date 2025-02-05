@@ -204,6 +204,9 @@ spotify-player
 bluetui
 monaspace
 yadm
+opencv
+sassc
+gtk-engine-murrine
         ];
   };
 

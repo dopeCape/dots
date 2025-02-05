@@ -2,7 +2,7 @@
 -- Configuration documentation can be found with `:h astrocore`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
 --       as this provides autocomplete and documentation while editing
-
+local utils = require "utils"
 ---@type LazySpec
 return {
   "AstroNvim/astrocore",
@@ -27,14 +27,15 @@ return {
 
     options = {
       opt = { -- vim.opt.<key>
-        relativenumber = false, -- sets vim.opt.relativenumber
+        relativenumber = true, -- sets vim.opt.relativenumber
         foldmarker = " , ",
-        number = false, -- sets vim.opt.number
+        number = true, -- sets vim.opt.number
         spell = false, -- sets vim.opt.spell
         signcolumn = "yes", -- sets vim.opt.signcolumn to yes
         wrap = false, -- sets vim.opt.wrap
         showtabline = 0,
         foldcolumn = "0",
+        cursorline = true,
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
@@ -64,8 +65,13 @@ return {
         ["<Leader>tne"] = { "<CMD>tabnew <CR>" },
         ["<Leader>tn"] = { "<CMD>tabnext<CR>" },
         ["<Leader>tp"] = { "<CMD>tabprevious <CR>" },
-        ["<Leader>os"] = { "<CMD>ObsidianSearch <CR>" },
         ["<Leader>on"] = { "<CMD>ObsidianNew<CR>" },
+        ["<Leader>os"] = { utils.search_by_title, desc = "Search by title" },
+        ["<Leader>ot"] = { utils.search_by_title_temp, desc = "Search by temp title" },
+        ["<Leader>op"] = { utils.search_by_title_perma, desc = "Search by title perma" },
+        ["<Leader>opr"] = { utils.search_by_title_projects, desc = "Search by title projects" },
+        ["<Leader>of"] = { utils.search_by_title_fun, desc = "Search by title fun" },
+        ["<Leader>od"] = { utils.search_daily, desc = "Search daily" },
 
         ["<C-w>z"] = { "<CMD>WindowsMaximize <CR>" },
 

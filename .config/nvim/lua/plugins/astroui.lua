@@ -15,6 +15,7 @@ return {
       init = { -- this table overrides highlights in all themes
         FloatBorder = { bg = "none", fg = "none", blend = 100 },
       },
+
       astrodark = { -- a table of overrides/changes when applying the astrotheme theme
       },
     },
