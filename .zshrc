@@ -173,9 +173,53 @@ preexec() {
 precmd() {
     echo -ne '\e[1 q'  # Change back to block when command completes
 }
+new_note() {
+    local notes_dir="/home/baby/obsi-vault/quicky/"
+    
+    # Prompt for title
+    echo -n "Enter note title: "
+    read title
+    
+    if [[ -n "$title" ]]; then
+        # Convert spaces to underscores using tr and make lowercase
+        local filename=$(echo "$title" | tr '[:upper:]' '[:lower:]' | tr ' ' '_')
+        
+        # Add timestamp and extension
+        local filepath="$notes_dir/$(date +%Y-%m-%d)_${filename}.md"
+        
+        # Create directory if it doesn't exist
+        mkdir -p "$notes_dir"
+        
+        # Create file with YAML frontmatter
+        cat > "$filepath" << EOL
+---
+title: $title
+date: $(date +"%Y-%m-%d %H:%M:%S")
+---
 
+EOL
+        
+        # Open in editor
+        $EDITOR "$filepath"
+    else
+        echo "No title provided"
+    fi
+}
 
+alias nn='new_note'
 
+alias nn='new_note'
+
+search_notes() {
+    local notes_dir="/home/baby/obsi-vault/"  # Change this to your notes directory
+    local selected_file=$(fd . "$notes_dir" | fzf --preview 'bat --style=numbers --color=always {}')
+    
+    if [[ -n $selected_file ]]; then
+        $EDITOR "$selected_file"
+    fi
+}
+
+alias te='search_notes'
 s() {
     echo $PWD
     echo "-------------"

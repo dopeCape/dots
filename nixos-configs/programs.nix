@@ -150,6 +150,10 @@
       gImageReader
       ventoy
       cascadia-code
+      appimage-run
+      calcure
+      fd
+      bat
     ];
   };
 
