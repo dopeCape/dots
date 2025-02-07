@@ -206,9 +206,7 @@ EOL
     fi
 }
 
-alias nn='new_note'
 
-alias nn='new_note'
 
 search_notes() {
     local notes_dir="/home/baby/obsi-vault/"  # Change this to your notes directory
@@ -219,7 +217,30 @@ search_notes() {
     fi
 }
 
+
+
+# search_tags() {
+#  local notes_dir="/home/baby/obsi-vault"
+#    local raw_tags=$(rg -U "tags:.*\n.*- .*" "$notes_dir")
+#    echo "$raw_tags"  # Debug line
+#    
+#    local selected_tag=$(echo "$raw_tags" | \
+#        grep "^.*- " | \
+#        sed 's/.*- //' | \
+#        sort -u | \
+#        fzf --prompt="Select tag: ")
+#    
+#    if [[ -n "$selected_tag" ]]; then
+#        local selected_file=$(rg -U -l "tags:.*\n.*- ${selected_tag}" "$notes_dir" | \
+#            fzf --preview 'bat --style=numbers --color=always {}')
+#        
+#        [[ -n "$selected_file" ]] && $EDITOR "$selected_file"
+#    fi}
+
+
+# alias st='search_tags'
 alias te='search_notes'
+alias nn='new_note'
 s() {
     echo $PWD
     echo "-------------"
@@ -227,3 +248,5 @@ s() {
         echo "$(git branch --show-current)"
     fi
 }
+
+
