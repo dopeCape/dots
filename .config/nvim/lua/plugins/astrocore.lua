@@ -72,6 +72,7 @@ return {
         ["<Leader>opr"] = { utils.search_by_title_projects, desc = "Search by title projects" },
         ["<Leader>of"] = { utils.search_by_title_fun, desc = "Search by title fun" },
         ["<Leader>od"] = { utils.search_daily, desc = "Search daily" },
+        ["<Leader>ol"] = { "<CMD>ObsidianFollowLink<CR>", desc = "Follow linke" },
 
         ["<C-w>z"] = { "<CMD>WindowsMaximize <CR>" },
 

@@ -154,6 +154,7 @@
       calcure
       fd
       bat
+      cool-retro-term
     ];
   };
 
