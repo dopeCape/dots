@@ -78,6 +78,7 @@
   "pets.nvim": { "branch": "main", "commit": "8a443e2eae804e5abe21b5d00ceaef4041f882e4" },
   "plenary.nvim": { "branch": "master", "commit": "2d9b06177a975543726ce5c73fca176cedbffe9d" },
   "presence.nvim": { "branch": "main", "commit": "87c857a56b7703f976d3a5ef15967d80508df6e6" },
+  "present.nvim": { "branch": "main", "commit": "975c0224d9f0d9061f904b1c61f983a7c3ec45f5" },
   "promise-async": { "branch": "main", "commit": "38a4575da9497326badd3995e768b4ccf0bb153e" },
   "render-markdown.nvim": { "branch": "main", "commit": "d7b646f2e6136d963e1bd3abbb9e2ac3fa90837a" },
   "resession.nvim": { "branch": "master", "commit": "cc819b0489938d03e4f3532a583354f0287c015b" },
