@@ -155,6 +155,9 @@
       fd
       bat
       cool-retro-term
+      droidcam
+      scrcpy
+      wrangler
     ];
   };
 
@@ -216,8 +219,9 @@
     go
     stdenv.cc.cc.lib
     python312Packages.pip
-    inputs.zen-browser.packages."${system}".default # beta
+    inputs.zen-browser.packages."${system}".default
     opencv4WithoutCuda
+    ghostty
   ];
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
