@@ -222,6 +222,9 @@
     inputs.zen-browser.packages."${system}".default
     opencv4WithoutCuda
     ghostty
+    caligula
+    parted
+    gparted
   ];
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
