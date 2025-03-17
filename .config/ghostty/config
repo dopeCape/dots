@@ -3,3 +3,4 @@ background-opacity    = 0.75
 background            = #000000
 gtk-tabs-location     = hidden
 confirm-close-surface = false
+custom-shader         = /home/baby/.config/ghostty/shaders/retro-terminal.glsl
