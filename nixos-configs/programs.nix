@@ -158,6 +158,11 @@
       droidcam
       scrcpy
       wrangler
+      docker-compose
+      vulkan-tools
+      pavucontrol
+
+
     ];
   };
 

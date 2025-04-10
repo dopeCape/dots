@@ -47,8 +47,35 @@ ENABLE_CORRECTION="true"
 fz() {
      cd "$(find /home/baby/workflow -type d -not -path "*/node_modules/*" -not -path "*/.git/*" | fzf)"
 }
-bindkey  -s '^f' 'echo tejas'
-bindkey -s -- '^t' '/home/tejes/sessionnizer.sh'
+
+# Function to select and edit configuration files using fzf
+config_edit() {
+  # Array of configuration file paths
+  # You can add your config paths below
+  local config_paths=(
+    ~/.zshrc
+    ~/.config/nvim/lua/plugins/user.lua
+    ~/.config/hypr/hyprland.conf
+    ~/.config/kitty/kitty.conf
+    ~/.config/ghostty/config
+    ~/nixos-configs/programs.nix
+    ~/.config/starship.toml
+    # Add more paths here as needed
+  )
+
+  # Use fzf to select a config file
+  local selected_file=$(printf "%s\n" "${config_paths[@]}" | fzf --height 40% --reverse --prompt="Select config file: ")
+  
+  # If a file was selected (fzf wasn't cancelled), open it in nvim
+  if [[ -n "$selected_file" ]]; then
+    nvim "$selected_file"
+  fi
+}
+
+# Create an alias if you want a shorter command
+alias ce="config_edit"
+zle -N fzf_widgit fz
+bindkey   '^f' fzf_widgit
 export FZF_DEFAULT_OPTS="
         --color=border:#44415a,header:#3e8fb0,gutter:#232136
         --color=spinner:#f6c177,info:#9ccfd8,separator:#44415a

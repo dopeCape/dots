@@ -31,8 +31,20 @@ return {
     "jay-babu/mason-nvim-dap.nvim",
     -- overrides `require("mason-nvim-dap").setup(...)`
     opts = {
+      handlers = {
+        typescript = function(source_name)
+          local dap = require "dap"
+          dap.adapters["pwa-node"] = {
+            type = "executable",
+            executable = {
+              command = "js-debug-adapter",
+            },
+          }
+        end,
+      },
       ensure_installed = {
         "python",
+        "javascript",
         -- add more arguments for adding more debuggers
       },
     },
