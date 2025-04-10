@@ -8,6 +8,7 @@ return {
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.git.octo-nvim" },
   { import = "astrocommunity.git.blame-nvim" },
+  { import = "astrocommunity.test.neotest" },
 
   -- import/override with your plugins folder
 }

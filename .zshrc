@@ -48,6 +48,9 @@ fz() {
      cd "$(find /home/baby/workflow -type d -not -path "*/node_modules/*" -not -path "*/.git/*" | fzf)"
 }
 
+rebuild(){
+sudo nixos-rebuild switch --flake ~/nixos-configs/flake.nix
+}
 # Function to select and edit configuration files using fzf
 config_edit() {
   # Array of configuration file paths
@@ -145,6 +148,7 @@ alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias tt="tt -showwpm -notheme -bold"
 #npm 
 alias  nr='npm run dev'
+alias  nt='npm run test'
 alias  ni='npm i'
 nid() {
     npm install "$1" --save-dev
