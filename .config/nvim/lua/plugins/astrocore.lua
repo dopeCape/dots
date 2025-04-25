@@ -3,6 +3,7 @@
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
 --       as this provides autocomplete and documentation while editing
 local utils = require "utils"
+local lsp_symbols = require "lsp_symbols"
 ---@type LazySpec
 return {
   "AstroNvim/astrocore",
@@ -73,6 +74,10 @@ return {
         ["<Leader>of"] = { utils.search_by_title_fun, desc = "Search by title fun" },
         ["<Leader>od"] = { utils.search_daily, desc = "Search daily" },
         ["<Leader>ol"] = { "<CMD>ObsidianFollowLink<CR>", desc = "Follow linke" },
+        ["<Leader>ss"] = {
+          lsp_symbols.find_ts_type_declarations,
+          desc = "LSP Symbols",
+        },
 
         ["<C-w>z"] = { "<CMD>WindowsMaximize <CR>" },
 

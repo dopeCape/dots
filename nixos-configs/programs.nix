@@ -75,7 +75,7 @@
       jq
       kate
       kitty
-      nodejs
+      nodejs_22
       slack
       thunderbird
       google-chrome
@@ -161,8 +161,8 @@
       docker-compose
       vulkan-tools
       pavucontrol
-
-
+      zed-editor
+      dooit
     ];
   };
 

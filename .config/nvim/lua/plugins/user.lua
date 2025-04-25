@@ -877,7 +877,7 @@ return {
       },
 
       scroll = {
-        enable = true,
+        enable = false,
       },
 
       -- Window resize
@@ -924,5 +924,15 @@ return {
   },
   {
     "marilari88/neotest-vitest",
+  },
+  {
+    "jbyuki/venn.nvim",
+  },
+  {
+    "2kabhishek/nerdy.nvim",
+    dependencies = {
+      "folke/snacks.nvim",
+    },
+    cmd = "Nerdy",
   },
 }
