@@ -8,8 +8,24 @@ if initialize_session "merger"; then
   # Create a new window inline within session layout definition.
   new_window "nvim"
   run_cmd  "nvim"
-  
-  new_window "runner"
+  new_window "runner-core"
+  run_cmd "cd apps/core/ "
+  run_cmd "nix-shell . "
+  run_cmd "start-detached "
+  run_cmd "make api"
+  split_h 50
+  run_cmd "cd apps/core/ "
+  run_cmd "make queue"
+  split_v 30
+  run_cmd "cd apps/core/"
+  new_window "runner-dashboard"
+  run_cmd "cd apps/dashboard/"
+  run_cmd "nr"
+  split_h 50
+  run_cmd "cd apps/dashboard/"
+  run_cmd "ls"
+  split_v 50
+  run_cmd "cd packages/sdk/"
 
   # Load a defined window layout.
 

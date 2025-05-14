@@ -19,7 +19,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.extraModulePackages = with config.boot.kernelPackages;
     [ v4l2loopback.out ];
-
+  boot.kernel.sysctl."kernel.yama.ptrace_scope" = 0;
   # Activate kernel modules (choose from built-ins and extra ones)
   boot.kernelModules = [
     # Virtual Camera

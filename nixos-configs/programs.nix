@@ -163,6 +163,11 @@
       pavucontrol
       zed-editor
       dooit
+      neovide
+      delve
+      postgresql
+      qutebrowser-qt5
+      redis
     ];
   };
 
