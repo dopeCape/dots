@@ -15,6 +15,8 @@ if initialize_session "merger"; then
   run_cmd "make api"
   split_h 50
   run_cmd "cd apps/core/ "
+  run_cmd "nix-shell . "
+  run_cmd "start-detached "
   run_cmd "make queue"
   split_v 30
   run_cmd "cd apps/core/"

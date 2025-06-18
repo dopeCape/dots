@@ -130,9 +130,9 @@
   # This will save you money and possibly your life!
 
 
-  #fonts
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+    nerd-fonts.droid-sans-mono
+    nerd-fonts.fira-code
   ];
 
 

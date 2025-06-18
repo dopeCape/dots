@@ -4,4 +4,4 @@ background            = #000000
 gtk-tabs-location     = hidden
 confirm-close-surface = false
 custom-shader         = /home/baby/.config/ghostty/shaders/retro-terminal.glsl
-font-family           = "mononoki"
+font-family           = "FreeMono"

@@ -1,12 +1,11 @@
-
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-      zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
 
   outputs = { self, nixpkgs, spicetify-nix, ... }@inputs: {
@@ -15,7 +14,7 @@
       modules = [
         ./configuration.nix
       ];
-      specialArgs = { inherit inputs; }; 
+      specialArgs = { inherit inputs; };
     };
   };
 }

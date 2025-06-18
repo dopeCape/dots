@@ -73,7 +73,7 @@
       grim
       slurp
       jq
-      kate
+      kdePackages.kate
       kitty
       nodejs_22
       slack
@@ -114,7 +114,6 @@
       vlc
       deno
       obsidian
-      ventoy
       tor
       tor-browser-bundle-bin
       warp-terminal
@@ -122,7 +121,11 @@
       zig_0_12
       bruno
       mpv-unwrapped
-      luajitPackages.luarocks_bootstrap
+      lua52Packages.rocks-git-nvim
+      libglibutil
+      latexrun
+      texliveTeTeX
+      pdf2svg
       lua
       neomutt
       lazygit
@@ -148,7 +151,6 @@
       leptonica
       hyprshot
       gImageReader
-      ventoy
       cascadia-code
       appimage-run
       calcure
@@ -157,7 +159,6 @@
       cool-retro-term
       droidcam
       scrcpy
-      wrangler
       docker-compose
       vulkan-tools
       pavucontrol
@@ -168,6 +169,11 @@
       postgresql
       qutebrowser-qt5
       redis
+      redisinsight
+      tree
+      unrar
+      code-cursor
+      python313Packages.manim
     ];
   };
 
@@ -217,7 +223,7 @@
     pango
     cairo
     alsa-lib
-    ksshaskpass
+    kdePackages.ksshaskpass
     wlr-randr
     p7zip
     yarn

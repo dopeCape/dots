@@ -1,7 +1,7 @@
 # Set a custom session root path. Default is `$HOME`.
 # Must be called before `initialize_session`.
 
-session_root "~/workflow/webdev/portfolio"
+session_root "~/workflow/projects/portfolio"
 
 # Create session with specified name if it does not already exist. If no
 # argument is given, session name will be based on layout file name.
@@ -12,7 +12,7 @@ if initialize_session "portfolio"; then
   run_cmd  "nvim"
   
   new_window "runner"
-  run_cmd "npm run dev"
+  run_cmd "nr"
   split_h 50
   run_cmd "ls"
 
