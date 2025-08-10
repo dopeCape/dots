@@ -8,21 +8,21 @@ return {
   "AstroNvim/astroui",
   ---@type AstroUIOpts
   opts = {
-    -- change colorscheme
-    colorscheme = "everforest",
-    -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
+    colorscheme = "kanagawa-dragon",
     highlights = {
-      init = { -- this table overrides highlights in all themes
+      init = {
         FloatBorder = { bg = "none", fg = "none", blend = 100 },
         WhichKeyDesc = { bg = "none", fg = "none", blend = 100 },
+        StatusLine = { bg = "#181616", fg = "#ffffff", blend = 100 },
+        StatusLineNC = { bg = "#181616", fg = "#ffffff" },
       },
-
-      astrodark = { -- a table of overrides/changes when applying the astrotheme theme
+      ["kanagawa-dragon"] = {
+        StatusLine = { bg = "#181616", fg = "#ffffff" },
+        StatusLineNC = { bg = "#181616", fg = "#ffffff" },
       },
+      astrodark = {},
     },
-    -- Icons can be configured throughout the interface
     icons = {
-      -- configure the loading of the lsp in the status line
       LSPLoading1 = "⠋",
       LSPLoading2 = "⠙",
       LSPLoading3 = "⠹",
@@ -40,7 +40,7 @@ return {
     },
     status = {
       colors = {
-        bg = "#000000",
+        bg = "#181616",
         section_bg = "#000000",
         winbar_bg = "#000000",
         winbarnc_bg = "#000000",

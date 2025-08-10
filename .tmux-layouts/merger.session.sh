@@ -29,11 +29,6 @@ if initialize_session "merger"; then
   split_v 50
   run_cmd "cd packages/sdk/"
 
-  # Load a defined window layout.
-
-  # Select the default active window on session creation.
-
 fi
 
-# Finalize session creation and switch/attach to it.
 finalize_and_go_to_session

@@ -204,6 +204,22 @@ preexec() {
 precmd() {
     echo -ne '\e[1 q'  # Change back to block when command completes
 }
+projects(){
+    local project=$(tx ls | fzf)
+    tx s "$project"
+}
+endprojects() {
+    local project_details=$(tmux ls | fzf)
+
+    if [[ -z "$project_details" ]]; then
+        echo "No project selected."
+        return 1
+    fi
+
+    local project_name="${project_details%%:*}"
+
+    tmux kill-session -t "$project_name"
+}
 new_note() {
     local notes_dir="/home/baby/obsi-vault/quicky/"
     
@@ -279,5 +295,4 @@ s() {
         echo "$(git branch --show-current)"
     fi
 }
-
 

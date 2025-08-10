@@ -15,7 +15,8 @@
   # vm 
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];
-
+  # for ssh server
+  services.sshd.enable = true;
 
   services.gnome.gnome-keyring.enable = true;
   # Enable CUPS to print documents.
@@ -122,6 +123,7 @@
       bruno
       mpv-unwrapped
       lua52Packages.rocks-git-nvim
+      lua52Packages.rocks-config-nvim
       libglibutil
       latexrun
       texliveTeTeX
@@ -174,6 +176,8 @@
       unrar
       code-cursor
       python313Packages.manim
+      audacity
+
     ];
   };
 
@@ -241,6 +245,10 @@
     caligula
     parted
     gparted
+    alacritty
+    warp-terminal
+    sqlite
+    glow
   ];
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];

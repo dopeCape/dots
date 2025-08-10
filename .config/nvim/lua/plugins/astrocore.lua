@@ -28,15 +28,15 @@ return {
 
     options = {
       opt = { -- vim.opt.<key>
-        relativenumber = true, -- sets vim.opt.relativenumber
+        relativenumber = false, -- sets vim.opt.relativenumber
         foldmarker = " , ",
-        number = true, -- sets vim.opt.number
+        number = false, -- sets vim.opt.number
         spell = false, -- sets vim.opt.spell
-        signcolumn = "yes", -- sets vim.opt.signcolumn to yes
+        signcolumn = "no", -- sets vim.opt.signcolumn to yes
         wrap = false, -- sets vim.opt.wrap
         showtabline = 0,
         foldcolumn = "0",
-        cursorline = true,
+        cursorline = false,
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
@@ -57,6 +57,12 @@ return {
           function()
             vim.wo.number = not vim.wo.number
             vim.wo.relativenumber = not vim.wo.relativenumber
+            local current_signcolumn = vim.wo.signcolumn
+            if current_signcolumn == "yes" then
+              vim.wo.signcolumn = "no"
+            else
+              vim.wo.signcolumn = "yes"
+            end
           end,
           desc = "Toggle line numbers",
         },

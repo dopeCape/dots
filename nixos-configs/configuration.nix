@@ -38,13 +38,6 @@
 
 
   networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
   networking.networkmanager.enable = true;
 
   nixpkgs.config.allowUnsupportedSystem = true;
@@ -97,42 +90,28 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?  
-
-
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = false;
   services.blueman.enable = true;
   nixpkgs.config.allowUnfree = true;
-
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "spotify"
   ];
-
-  #hyprland
-
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
   };
-
   environment.sessionVariables = {
     WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_WL = "1";
   };
-
-
-  #starship
   environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; }; # Optionally, set the environment variable
-
-
   boot.kernelParams = [ "acpi_rev_override" ];
-
-  # This will save you money and possibly your life!
-
-
   fonts.packages = with pkgs; [
     nerd-fonts.droid-sans-mono
     nerd-fonts.fira-code
+    dina-font
+    terminus_font
   ];
 
 

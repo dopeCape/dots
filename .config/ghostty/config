@@ -1,7 +1,8 @@
 window-decoration     = false
-background-opacity    = 0.75
-background            = #000000
+background-opacity    = 1.00
 gtk-tabs-location     = hidden
 confirm-close-surface = false
-custom-shader         = /home/baby/.config/ghostty/shaders/retro-terminal.glsl
-font-family           = "FreeMono"
+font-family           = mononoki
+theme                 = kanagawa
+window-padding-x      = 0
+window-padding-y      = 0
