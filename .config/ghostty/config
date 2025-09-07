@@ -1,8 +1,8 @@
 window-decoration     = false
-background-opacity    = 1.00
+background-opacity    = 0.90
 gtk-tabs-location     = hidden
 confirm-close-surface = false
 font-family           = mononoki
-theme                 = kanagawa
+theme                 = my-gruv
 window-padding-x      = 0
 window-padding-y      = 0

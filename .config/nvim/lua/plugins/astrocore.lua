@@ -37,6 +37,15 @@ return {
         showtabline = 0,
         foldcolumn = "0",
         cursorline = false,
+        fillchars = {
+          vert = " ",
+          vertleft = " ",
+          vertright = " ",
+          verthoriz = " ",
+          horiz = " ",
+          horizup = " ",
+          horizdown = " ",
+        },
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)

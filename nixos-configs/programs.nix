@@ -177,7 +177,11 @@
       code-cursor
       python313Packages.manim
       audacity
-
+      wezterm
+      impala
+      iwd
+      brightnessctl
+      tree-sitter
     ];
   };
 
@@ -194,6 +198,7 @@
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     git
+    stdenv
     waybar
     dunst
     bun
@@ -249,6 +254,9 @@
     warp-terminal
     sqlite
     glow
+    claude-code
+    envsubst
+    gimp
   ];
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];

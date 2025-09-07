@@ -78,7 +78,9 @@ config_edit() {
 # Create an alias if you want a shorter command
 alias ce="config_edit"
 zle -N fzf_widgit fz
+bindkey '^E' autosuggest-accept
 bindkey   '^f' fzf_widgit
+bindkey '^P' up-line-or-history
 export FZF_DEFAULT_OPTS="
         --color=border:#44415a,header:#3e8fb0,gutter:#232136
         --color=spinner:#f6c177,info:#9ccfd8,separator:#44415a
@@ -204,6 +206,7 @@ preexec() {
 precmd() {
     echo -ne '\e[1 q'  # Change back to block when command completes
 }
+
 projects(){
     local project=$(tx ls | fzf)
     tx s "$project"

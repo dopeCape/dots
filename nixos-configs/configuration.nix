@@ -39,6 +39,9 @@
 
   networking.hostName = "nixos"; # Define your hostname.
   networking.networkmanager.enable = true;
+  networking.hosts = {
+    "127.0.0.1" = [ "localhost" "api.localhost" ];
+  };
 
   nixpkgs.config.allowUnsupportedSystem = true;
 
@@ -104,6 +107,12 @@
   environment.sessionVariables = {
     WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_WL = "1";
+    AMD_VULKAN_ICD = "RADV";
+    RADV_PERFTEST = "gpl";
+    VK_ICD_FILENAMES = "/run/opengl-driver/share/vulkan/icd.d/radeon_icd.x86_64.json";
+
+    TERM = "xterm-256color";
+    COLORTERM = "truecolor";
   };
   environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; }; # Optionally, set the environment variable
   boot.kernelParams = [ "acpi_rev_override" ];
@@ -113,6 +122,13 @@
     dina-font
     terminus_font
   ];
+  hardware.opengl = {
+    enable = true;
+    extraPackages = with pkgs; [
+      amdvlk # AMD Vulkan
+    ];
+    extraPackages32 = with pkgs.pkgsi686Linux; [ amdvlk ];
+  };
 
 
 }

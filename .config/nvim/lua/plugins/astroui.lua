@@ -8,13 +8,14 @@ return {
   "AstroNvim/astroui",
   ---@type AstroUIOpts
   opts = {
-    colorscheme = "kanagawa-dragon",
+    colorscheme = "gruvbox",
     highlights = {
       init = {
         FloatBorder = { bg = "none", fg = "none", blend = 100 },
         WhichKeyDesc = { bg = "none", fg = "none", blend = 100 },
         StatusLine = { bg = "#181616", fg = "#ffffff", blend = 100 },
         StatusLineNC = { bg = "#181616", fg = "#ffffff" },
+        WinSeparator = { blend = 100, ctermbg = "none", ctermfg = "none" },
       },
       ["kanagawa-dragon"] = {
         StatusLine = { bg = "#181616", fg = "#ffffff" },
